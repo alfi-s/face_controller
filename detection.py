@@ -39,7 +39,7 @@ def middle_of_box (x,y,w,h):
 def main():
     wait_for_inputs = False
 
-    q# Keyboard Controller for inputs
+    # Keyboard Controller for inputs
     keyboard = Controller()
 
     # Haar Cascade for face detction
