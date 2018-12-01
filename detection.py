@@ -11,8 +11,8 @@ x_threshold = 50
 y_threshold = 50
 
 # The keys to press
-key_x_below_threshold = Key.right    # x < x_threshold
-key_x_above_threshold = Key.left   # x > x_threshold
+key_x_below_threshold = Key.right   # x < x_threshold
+key_x_above_threshold = Key.left    # x > x_threshold
 key_y_below_threshold = Key.down    # y < y_threshold
 key_y_above_threshold = Key.up      # y > y_threshold
 
