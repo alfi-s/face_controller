@@ -37,9 +37,9 @@ def middle_of_box (x,y,w,h):
 ########################
 
 def main():
-    wait_for_inputs = 100
+    wait_for_inputs = False
 
-    # Keyboard Controller for inputs
+    q# Keyboard Controller for inputs
     keyboard = Controller()
 
     # Haar Cascade for face detction
@@ -65,7 +65,7 @@ def main():
             print(cx, cy)
             
             # Control the inputs based on the position of the face
-            if (wait_for_inputs == 0):
+            if (wait_for_inputs):
                 if (cx < -x_threshold):
                     keyboard.press(key_x_below_threshold)
                 elif (cx > x_threshold):
@@ -81,12 +81,11 @@ def main():
             end_x = x + w
             end_y = y + h
             cv2.rectangle(frame, (x,y), (end_x,end_y), rect_color, stroke)
-        
-        if (wait_for_inputs > 0):
-            wait_for_inputs -=1
 
         # The web cam frame
         cv2.imshow('WebCam',frame)
+        if cv2.waitKey(1) & 0xFF == ord('i'):
+            wait_for_inputs = True
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
