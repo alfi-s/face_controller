@@ -4,6 +4,12 @@ import cv2
 def cartesian_coordinates(sx, sy, fw, fh):
     cx = sx - (fw/2)
     cy = (fh/2) - sy
+    return (cx, cy)
+
+def middle_of_box (x,y,w,h):
+    mx = x + (w/2)
+    my = y + (h/2)
+    return mx, my
 
 face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_alt2.xml")
 
@@ -13,13 +19,14 @@ while(True):
     ret, frame = cap.read()
     f_width = cap.get(3)
     f_height = cap.get(4)
-    print (f_width, f_height)
 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.5, minNeighbors=5)
 
     for (x,y,w,h) in faces:
-        print (x,y,w,h)
+        mx, my = middle_of_box(x,y,w,h)
+        cx, cy = cartesian_coordinates(mx,my,f_width,f_height)
+        print(cx, cy)
 
         rect_color = (255,0,0)
         stroke = 2
