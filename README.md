@@ -6,7 +6,7 @@ This is a simple python script that uses the OpenCV library to detect faces, and
 
 ## Prerequisites
 In order to run this, you need OpenCV and pynput.
-You can install OpenCV by going (here)[].
+You can install OpenCV by going [here](https://www.learnopencv.com/install-opencv3-on-ubuntu/).
 You can install pynput by:
 ```bash
 pip3 install pynput
